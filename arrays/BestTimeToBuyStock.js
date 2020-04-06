@@ -20,7 +20,7 @@ function maxProfit(prices) {
   let minPrice = prices[0];
   let profit = 0;
 
-  for (let i = 1; i < prices.length; i += 1) {
+  for (let i = 1; i < prices.length; i++) {
     if (minPrice > prices[i]) {
       minPrice = prices[i];
     } else if (minPrice < prices[i]) {
@@ -32,4 +32,4 @@ function maxProfit(prices) {
   return profit;
 }
 
-console.log(maxProfit([7, 1, 5, 3, 6, 4]));
+console.log(maxProfit([10, 1, 5, 3, 6, 4]));
