@@ -11,16 +11,15 @@
 
 // console.log(rotLeft([1, 2, 3, 4, 5], 4));
 
-function rotLeft(arr, rotations) {
-  const rotatedArray = arr.concat();
+function rotLeft(a, d) {
+  const rotatedArray = a.concat();
 
-  for (let i = 0; i < rotations; i++) {
+  for (let i = 0; i < d; i++) {
     // shift off the first item
     let frontItem = rotatedArray.shift();
     // add the first item to end of array
     rotatedArray.push(frontItem);
   }
-
   return rotatedArray;
 }
 
