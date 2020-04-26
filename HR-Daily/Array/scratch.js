@@ -115,5 +115,83 @@ console.log(countSyllables("Lalalalala"));
 function isTriangle(a, b, c) {
   return a + b > c && a + c > b && b + c > a;
 }
-
 console.log(isTriangle(2, 9, 5));
+
+/// 10
+function addIndexes(arr) {
+  let answer = [];
+
+  for (i = 0; i < arr.length; i++) {
+    let adder = arr[i] + i;
+    answer.push(adder);
+  }
+
+  return answer;
+}
+
+console.log(addIndexes([1, 2, 3, 4, 5]), [1, 3, 5, 7, 9]);
+//// 11
+function minMax(arr) {
+  let holder = [];
+  let max = Math.max(...arr);
+  let min = Math.min(...arr);
+  holder.push(min, max);
+  return holder;
+}
+
+console.log(minMax([4, 3, 2, 5]));
+
+////12
+
+function filterArray(arr) {
+  return arr.filter((string) => typeof string === "number");
+}
+console.log(filterArray([1, "a", "b", 0, 15]));
+
+// 13
+
+function totalCups(n) {
+  let cups = Math.floor(n / 6);
+  return cups + n;
+}
+console.log(totalCups(12));
+
+function pHName(pH) {
+  if (pH > 14 || pH < 0) {
+    return "invalid";
+  }
+  if (pH === 7) {
+    return "neutral";
+  }
+  if (pH < 7) {
+    return "acidic";
+  }
+  if (pH > 7) {
+    return "alkaline";
+  }
+}
+
+console.log(pHName(7.26));
+
+// 14
+function sortByLength(arr) {
+  return arr.sort((a, b) => b.length - a.length);
+}
+
+console.log(sortByLength(["Google", "Apple", "Microsoft"]));
+
+// 15
+
+function wumbo(words) {
+  return words.replace(/M/g, "W");
+}
+console.log(wumbo("WHAT DO YOU MEAN WE'RE OUT OF MONEY"));
+
+///// Another example
+function wumbo(words) {
+  return words
+    .split("")
+    .map((x) => x.replace("M", "W"))
+    .join("");
+}
+console.log(wumbo("WHAT DO YOU MEAN WE'RE OUT OF MONEY"));
