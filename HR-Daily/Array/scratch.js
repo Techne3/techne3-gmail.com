@@ -195,3 +195,86 @@ function wumbo(words) {
     .join("");
 }
 console.log(wumbo("WHAT DO YOU MEAN WE'RE OUT OF MONEY"));
+/// 16
+function getMultipliedArr(arr) {
+  for (i = 0; i < arr.length; i++) {
+    arr[i] *= 2;
+  }
+  return arr;
+}
+console.log(getMultipliedArr([1, 3, 5]));
+
+//17
+
+function wordLengths(arr) {
+  return arr.map((x) => x.length);
+}
+console.log(wordLengths(["Halloween", "Thanksgiving", "Christmas"]));
+
+/// add all numbers leading up to n
+// example n =3      1 + 2 + 3 = 6
+function addUpTo(n) {
+  var sum = 0;
+  for (i = 1; i <= n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+console.log(addUpTo(3));
+
+/// find volume
+function volPizza(radius, height) {
+  let rad = radius * radius;
+  return Math.round(rad * (height * Math.PI));
+}
+
+console.log(volPizza(7, 2));
+console.log(volPizza(10, 2.5));
+
+// find how many overlapping claps there arr in string
+// function countClaps(str) {
+//   let spliter = str.split("");
+//   let filterSplit = spliter.filter((x) => x == "C");
+//   return filterSplit.length;
+// }
+// console.log(countClaps(countClaps("ClaClaClaClap!")));
+
+// function countClaps(txt) {
+// 	var arr = txt.split('');
+// 	var counter = 0;
+// 	for (var i = 0; i < arr.length; i++) {
+// 		if (arr[i] === 'C') {
+// 			counter++;
+// 		}
+// 	}
+// 	return counter;
+// }
+
+// console.log(countClaps(countClaps("ClaClaClaClap!")))
+
+//Create a function which returns the total of all odd numbers up to and including n.
+
+function addOddToN(n) {
+  let count = 0;
+  for (i = 0; i <= n; i++) {
+    if (i % 2 !== 0) {
+      count += i;
+    }
+  }
+  return count;
+}
+console.log(addOddToN(5));
+//Something which is not true is false, but something which is not not true is true! Create a function where given n number of "not", evaluate whether it's true or false.
+
+function notNotNot(n, bool) {
+  if (n % 2 === 0) {
+    return bool;
+  } else {
+    return !bool;
+  }
+}
+console.log(notNotNot(6, true));
+// not not not not not not true = true
+console.log(notNotNot(2, false));
+//Not not false = false
+console.log(notNotNot(1, true));
