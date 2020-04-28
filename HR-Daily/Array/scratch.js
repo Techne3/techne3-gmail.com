@@ -310,3 +310,170 @@ function extractEachKth(inputArray, k) {
   return inputArray.filter((x) => x % k !== 0);
 }
 console.log(extractEachKth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+// space out string
+
+function spaceMeOut(strs) {
+  return strs.split("").join(" ");
+}
+console.log(spaceMeOut("space"));
+
+/// fix bug
+
+function checkEquals(arr1, arr2) {
+  if (arr1.join(",") === arr2.join(",")) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(checkEquals([1, 2], [1, 2]));
+console.log(checkEquals([11, 2], [1, 12]));
+
+/// convert number to binary
+
+// function binary(decimal) {
+// 	return decimal.toString(2);
+// }
+
+// console.log(binary(100));
+
+function binary(decimal) {
+  let result = "";
+  if (decimal == 0) {
+    result = "0";
+  }
+  while (decimal > 0) {
+    result += decimal % 2;
+    decimal = Math.floor(decimal / 2);
+    // console.log(decimal);
+    // console.log(result);
+  }
+  return result.split("").reverse().join("");
+}
+console.log(binary(100));
+
+/// higher order function call
+function whichIsLarger(f, g) {
+  return f() > g() ? "f" : f() < g() ? "g" : "neither";
+  // if(f() > g()){
+  // 	return 'f'
+  // }else if(f() < g()){
+  // 	return 'g'
+  // }else{
+  // 	return 'neither'
+  // }
+}
+
+function removeVowels(string) {
+  let vowels = {
+    a: true,
+    e: true,
+    i: true,
+    o: true,
+    u: true,
+  };
+
+  let result = "";
+
+  for (let i = 0; i < string.length; i++) {
+    let letter = string[i].toLowerCase();
+    if (!vowels[letter]) {
+      result += string[i];
+    }
+  }
+  return result;
+}
+console.log(removeVowels("If Obama resigns from office NOW, thereby"));
+
+// function disemvowel(str) {
+//   var vowels = ["a", "e", "i", "o", "u"];
+
+//   return str.toLowerCase()
+//     .split("")
+//     .filter((el) {
+//       return vowels.indexOf(el.toLowerCase()) == -1;
+//     })
+//     .join("");
+// }
+
+// console.log(disemvowel("Hello Josh"));
+
+function disemvowel(str) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  let spliterStr = str.toLowerCase().split("");
+  return spliterStr
+    .filter((x) => {
+      return vowels.indexOf(x) == -1;
+    })
+    .join("");
+}
+console.log(disemvowel("Hello Josh"));
+
+///////  return str.replace(/[aeiouAEIOU]/g, "")
+//////// return str.split("").filter(char => 'aeiouAEIOU'.indexOf(char) < 0).join("")
+
+/// can next arrays if arr1's min is greater than arr2's min.
+// arr1's max is less than arr2's max.
+function canNest(arr1, arr2) {
+  let min1 = Math.min(...arr1);
+  let min2 = Math.min(...arr2);
+  let max1 = Math.max(...arr1);
+  let max2 = Math.max(...arr2);
+
+  if (min1 === min2) {
+    return false;
+  }
+  return min1 > min2 ? true : max1 <= max2 ? true : false;
+}
+
+console.log(canNest([1, 2, 3, 4], [0, 6]));
+console.log(canNest([9, 9, 8], [8, 9, 10]));
+
+// https://edabit.com/challenge/tYHkTdFrEmWfxpPKF
+function matchHouses(step) {
+  let count = 0;
+  if (step === 0) {
+    return 0;
+  } else if (step) {
+    return (count += 5 * step + 1);
+  }
+}
+console.log(matchHouses(1));
+
+///Create a function that takes a number and return an array of three numbers: half of the number, quarter of the number and an eighth of the number
+
+const halfQuarterEighth = (n) => {
+  arr = [n / 2, n / 4, n / 8];
+  return arr;
+};
+console.log(halfQuarterEighth(6));
+
+////// return num of '-'
+function Go(num) {
+  let dash = "";
+  while (num <= 60) {
+    for (let i = 0; i < num; i++) {
+      dash += "-";
+    }
+    return dash;
+  }
+}
+console.log(Go(10));
+
+// Create a function to calculate the determinant of a 2 x 2 matrix.
+// The determinant of the following matrix is: ad - bc:
+
+const calcDeterminant = (matrix) => {
+  return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+
+  //const [[a, b], [c, d]] = matrix
+  // return a * d - b * c
+};
+console.log(
+  calcDeterminant([
+    [3, 1],
+    [5, 3],
+  ])
+);
