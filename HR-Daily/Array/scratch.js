@@ -267,14 +267,46 @@ console.log(addOddToN(5));
 //Something which is not true is false, but something which is not not true is true! Create a function where given n number of "not", evaluate whether it's true or false.
 
 function notNotNot(n, bool) {
-  if (n % 2 === 0) {
-    return bool;
-  } else {
-    return !bool;
-  }
+  return n % 2 === 0 ? bool : !bool;
 }
 console.log(notNotNot(6, true));
 // not not not not not not true = true
 console.log(notNotNot(2, false));
 //Not not false = false
 console.log(notNotNot(1, true));
+
+// class Employee {
+//   constructor(firstname, lastname) {
+//     this.firstname = firstname;
+//     this.lastname = lastname;
+//     this.fullname = `${firstname} ${lastname}`;
+//     this.email = `${firstname}.${lastname}@company.com`.toLowerCase();
+//   }
+// }
+
+//Create a function where given the number n, return the sum of all square numbers up to and including n.
+function squaresSum(n) {
+  let count = 0;
+  for (i = 0; i <= n; i++) {
+    count += i * i;
+  }
+  return count;
+}
+console.log(squaresSum(12));
+
+/// return smallest num in array
+function findSmallestNum(arr) {
+  return Math.min(...arr);
+}
+
+console.log(findSmallestNum([34, 15, 88, 2]));
+
+/// Given arroy of integers, remove each kth element from it
+/// EXAMPLE:
+//// for inputArray =[1,2,3,4,5,6,7,8,9,10] and k=3
+//// output should be extractEachKth(inputArray,k) = [1,2,4,5,7,8,10]
+
+function extractEachKth(inputArray, k) {
+  return inputArray.filter((x) => x % k !== 0);
+}
+console.log(extractEachKth([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
