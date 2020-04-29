@@ -109,3 +109,84 @@ console.log(calculator(2, "+", 2));
 console.log(calculator(2, "-", 2));
 console.log(calculator(2, "*", 4));
 console.log(calculator(2, "/", 0));
+
+// Create a function that takes two strings and returns true if the first string ends with the second string; otherwise return false.
+function checkEnding(str1, str2) {
+  //   return str1.substr(-str2.length) === str2 ? true : false;
+  return str1.endsWith(str2);
+}
+console.log(checkEnding("abc", "bc"));
+
+// This Triangular Number Sequence is generated from a pattern of dots that form a triangle. The first 5 numbers of the sequence, or dots, are: 1, 3, 6, 10, 15. Write a function that converts n number of places with its corresponding number.
+
+function triangle(n) {
+  return (n * (n + 1)) / 2;
+
+  //other solution
+  //   let s = 0 ;
+  //   for (let i=0 ; i<n ; i++){
+  //       s += (i+1) ;
+  //   }
+  //   return s ;
+}
+
+console.log(triangle(215));
+
+function reverse(bool) {
+  if (bool === true) {
+    return false;
+  } else if (bool === false) {
+    return true;
+  } else {
+    return "boolean expected";
+  }
+
+  //   return (typeof bool === "boolean") ? !bool : "boolean expected";
+}
+
+console.log(reverse(0));
+
+//https://app.codesignal.com/interview-practice/task/pMvymcahZ8dY4g75q
+
+function firstDuplicate(a) {
+  let nSet = new Set();
+
+  for (let i = 0; i < a.length; i++) {
+    if (nSet.has(a[i])) {
+      return a[i];
+    } else {
+      nSet.add(a[i]);
+    }
+  }
+
+  return -1;
+}
+console.log(firstDuplicate([1, 2, 3, 2]));
+
+// https://app.codesignal.com/interview-practice/task/uX5iLwhc6L5ckSyNC
+
+function firstNotRepeatingCharacter(s) {
+  for (let i = 0; i < s.length; i++) {
+    let c = s.charAt(i);
+    console.log(c);
+    if (s.indexOf(c) == i && s.indexOf(c, i + 1) == -1) {
+      return c;
+    }
+  }
+  return "_";
+}
+
+console.log(firstNotRepeatingCharacter("abacabad"));
+// console.log(firstNotRepeatingCharacter("abacabaabacaba"));
+
+function firstNonRepeatingChar(s) {
+  for (let i = 0; i < s.length; i++) {
+    if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+      return s.charAt(i);
+    }
+  }
+  return "_";
+}
+
+console.log(firstNonRepeatingChar("abacabad"));
+console.log(firstNonRepeatingChar("abacabaabacaba"));
