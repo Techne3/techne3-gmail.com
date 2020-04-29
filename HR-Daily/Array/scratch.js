@@ -477,3 +477,36 @@ console.log(
     [5, 3],
   ])
 );
+
+// Create a function that takes an array of hurdle heights and a jumper's jump height, and determine whether or not the hurdler can clear all the hurdles.
+
+function hurdleJump(hurdles, jumpHeight) {
+  let max = Math.max(...hurdles);
+  return jumpHeight >= max ? true : false;
+}
+console.log(hurdleJump([1, 2, 3, 4, 5], 5));
+console.log(hurdleJump([5, 5, 3, 4, 5], 3));
+
+// If 27 is our input, we should return false because swapping the digits gives us 72, and 72 > 27. On the other hand, swapping 43 gives us 34, and 43 > 34.
+function largestSwap(num) {
+  let arrSplit = num.toString().split("").reverse().join("");
+  if (num >= arrSplit) {
+    return true;
+  }
+  return false;
+}
+
+console.log(largestSwap(43));
+console.log(largestSwap(19));
+console.log(largestSwap(99));
+
+///Create a function that takes a string and returns a string in which each character is repeated once.
+function doubleChar(str) {
+  let doubler = "";
+  for (let i = 0; i < str.length; i++) {
+    doubler += str[i] + str[i];
+  }
+  return doubler;
+}
+
+console.log(doubleChar("String"));
