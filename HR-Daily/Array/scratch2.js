@@ -161,7 +161,7 @@ function firstDuplicate(a) {
 
   return -1;
 }
-console.log(firstDuplicate([1, 2, 3, 2]));
+console.log(firstDuplicate([1, 2, 3, 2, 1]));
 
 // https://app.codesignal.com/interview-practice/task/uX5iLwhc6L5ckSyNC
 
@@ -181,7 +181,7 @@ console.log(firstNotRepeatingCharacter("abacabad"));
 
 function firstNonRepeatingChar(s) {
   for (let i = 0; i < s.length; i++) {
-    if (s.indexOf(s.charAt(i)) == s.lastIndexOf(s.charAt(i))) {
+    if (s.indexOf(s.charAt(i)) === s.lastIndexOf(s.charAt(i))) {
       return s.charAt(i);
     }
   }

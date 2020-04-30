@@ -24,3 +24,18 @@ function TwoSums(nums, target) {
 }
 
 console.log(TwoSums([2, 11, 7, 15], 9));
+
+function TwoTwo(nums, tar) {
+  let results = [];
+  for (let i = 0, j = i + 1; i < nums.length; i++, j++) {
+    console.log(nums[i]);
+    console.log(nums[i]);
+    if (nums[i] + nums[j] === tar) {
+      results.push(i);
+      results.push(j);
+    }
+  }
+  return results;
+}
+
+console.log(TwoTwo([2, 11, 7, 15], 9));
