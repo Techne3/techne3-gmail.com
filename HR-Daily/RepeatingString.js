@@ -2,6 +2,7 @@
 
 function repeatedString(s, n) {
   let loopedArr = [];
+  // let splitArr = s.split("");
   let counter = 0;
   // loops over the string and as long as j is not n
   for (let i = 0, j = 0; j < n; i++, j++) {
@@ -21,4 +22,62 @@ function repeatedString(s, n) {
   return counter;
 }
 
-console.log(repeatedString(["a", "b", "a"], 10));
+console.log(repeatedString("aba", 10));
+
+function repeatString(str, num) {
+  const splitArr = str.split("").filter((c) => c === "a").length;
+
+  let repeat = Math.floor(num / str.length);
+  // console.log(repeat);
+  let rest = num % str.length;
+  // console.log(rest);
+
+  // console.log(str.slice(0, rest));
+
+  const total =
+    repeat * splitArr +
+    str
+      .slice(0, rest)
+      .split("")
+      .filter((c) => c === "a").length;
+
+  return total;
+}
+
+console.log(repeatString("aba", 14));
+
+//// other solution
+// function repeatedString(s, n) {
+//   let c = 0,
+//     ca = 0,
+//     r = n % s.length;
+
+//   for (let i = s.length; i-- > 0; ) {
+//     if (s.charAt(i) == "a") {
+//       ++c;
+
+//       if (i < r) ++ca;
+//     }
+//   }
+
+//   return ((n - r) / s.length) * c + ca;
+// }
+// console.log(repeatedString("aba", 10));
+
+function repeated(s, n) {
+  let splitArr = s.split("").filter((c) => c === "a").length;
+  let times = Math.floor(n / s.length);
+  let mod = n % s.length;
+
+  let together = splitArr * times;
+
+  return (
+    together +
+    s
+      .slice(0, mod)
+      .split("")
+      .filter((x) => x === "a").length
+  );
+}
+
+console.log(repeated("aba", 10));
