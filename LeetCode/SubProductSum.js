@@ -42,3 +42,52 @@ console.log(subtractProductAndSum(2345));
 // let num = 25434;
 // let sum = num % 10;
 // console.log(sum);
+//////// Double linked list solution//////
+// Create nodes with char code and counts.
+// Create doubly linked list
+// Iterate and remove nodes until the last node's count equals 0, prev === null andnext === null (prev === next)
+const base = 97;
+const total = 26;
+const keys = ["next", "prev"];
+
+class Node {
+  constructor(val) {
+    this.val = val;
+    this.char = String.fromCharCode(base + val);
+    this.count = 0;
+    this.prev = null;
+    this.next = null;
+  }
+}
+
+function sortString(s) {
+  const nodes = Array.from({ length: total }, (_, i) => new Node(i));
+  for (const c of s) {
+    nodes[c.charCodeAt(0) - base].count++;
+  }
+  for (const [index, node] of nodes.entries()) {
+    node.prev = nodes[index - 1];
+    node.next = nodes[index + 1];
+  }
+  let current = 0;
+  let result = "";
+  let [node] = nodes;
+  while (node.count || node.next !== node.prev) {
+    const key1 = keys[current];
+    if (node.count !== 0) {
+      result += node.char;
+      node.count--;
+    } else if (node[key1]) {
+      const key2 = keys[current ^ 1];
+      node[key1][key2] = node[key2];
+    }
+    if (node[key1]) {
+      node = node[key1];
+    } else {
+      current ^= 1;
+    }
+  }
+  return result;
+}
+
+console.log(sortString("leetcode"));

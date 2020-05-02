@@ -20,12 +20,13 @@ function containsDuplicate(nums) {
 
   for (let i = 0; i < nums.length; i++) {
     unique.add(nums[i]);
+    console.log(unique);
   }
   return nums.length !== unique.size;
 }
 
 console.log(containsDuplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2]));
-console.log(containsDuplicate([1, 3, 4, 2]));
+// console.log(containsDuplicate([1, 3, 4, 2]));
 
 // function containsDuplicate(nums) {
 //   let keep = [];

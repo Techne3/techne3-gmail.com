@@ -7,7 +7,7 @@ function sockMerchant(n, arr) {
   for (let i = 0; i < arr.length; i++) {
     if (sorted[i] === sorted[i + 1]) {
       pairs++;
-      i += 1;
+      i++;
     }
   }
 
