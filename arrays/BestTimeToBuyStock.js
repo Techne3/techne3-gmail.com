@@ -25,7 +25,10 @@ function maxProfit(prices) {
       minPrice = prices[i];
     } else if (minPrice < prices[i]) {
       let currentProfit = prices[i] - minPrice;
+      console.log(currentProfit)
+      console.log(profit)
       profit = Math.max(profit, currentProfit);
+
     }
   }
 
