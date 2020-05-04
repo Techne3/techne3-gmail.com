@@ -28,7 +28,7 @@ function timer(str) {
   if (AMPM === "AM" && timeArr[0] === "12") {
     timeArr[0] = "00";
   } else if (AMPM === "PM") {
-    timeArr[0] = Number((timeArr[0] % 12) + 12);
+    timeArr[0] = Number((timeArr[0].indexOf(12) !== -1) + 12);
   }
   return timeArr.join(":");
 }
