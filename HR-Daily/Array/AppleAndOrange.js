@@ -1,10 +1,40 @@
 // https://www.hackerrank.com/challenges/apple-and-orange/problem
 
-// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  let applesInRange = 0;
+  let orangesInRange = 0;
 
+  // get the max length of both arrays to use it in the for loop
+  let length = Math.max(apples.length, oranges.length);
+
+  for (let i = 0; i < length; i++) {
+    //check if this index exist in apples
+    if (typeof apples[i] !== "undefined") {
+      if (a + apples[i] >= s && a + apples[i] <= t) {
+        applesInRange++;
+      }
+    }
+
+    //check if this index exist in oranges
+    if (typeof oranges[i] !== "undefined") {
+      if (b + oranges[i] >= s && b + oranges[i] <= t) {
+        orangesInRange++;
+      }
+    }
+  }
+
+  console.log(applesInRange);
+  console.log(orangesInRange);
+}
+
+console.log(countApplesAndOranges());
+
+// function appleAndOrange(s, t, a, b, apple, orange) {
+//   return [
+//       apple.map(p => p + a).filter(p => p >= s && p <= t).length,
+//       orange.map(p => p + b).filter(p => p >= s && p <= t).length
+//   ]
 // }
-
-// console.log(countApplesAndOranges())
 
 //  https://www.hackerrank.com/challenges/time-conversion/problem
 function timeConversion(s) {
