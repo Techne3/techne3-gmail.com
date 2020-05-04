@@ -51,6 +51,7 @@ function records(game) {
   let min = 0;
 
   for (let score of game) {
+    console.log(score);
     if (most > score) {
       most = score;
       max++;
