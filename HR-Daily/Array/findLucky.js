@@ -11,7 +11,7 @@ function findLucky(arr) {
     map.set(arr[i], map.get(arr[i]) + 1);
   }
   // current max number
-  let max = -1;
+  let max = 0;
 
   // go thru map entries
   for (const e of map.entries()) {

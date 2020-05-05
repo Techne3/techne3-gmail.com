@@ -38,7 +38,7 @@ function migratoryBirds(arr) {
       map.set(n, 0);
     }
     map.set(n, map.get(n) + 1);
-    // console.log(map)
+    // console.log(map);
   }
   const s = Array.from(map.entries()).sort((a, b) => b[1] - a[1]);
   return s[0][0];
