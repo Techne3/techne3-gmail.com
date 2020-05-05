@@ -8,6 +8,7 @@ function viralAdvertising(n) {
     sum += p;
     p *= 3;
   });
+
   return sum;
 }
 
