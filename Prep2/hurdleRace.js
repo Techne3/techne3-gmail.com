@@ -2,14 +2,13 @@
 
 function hurdleRace(height, k) {
   height.sort((a, b) => a - b);
-  let max = 0;
+  let max = [];
   height.forEach((x) => {
     if (x > k) {
-      max = x - k;
-      console.log(max);
+      max.push(x - k);
     }
   });
-  return max;
+  return Math.max(...max, 0);
 }
 
 console.log(hurdleRace([1, 6, 3, 5, 2], 3));
