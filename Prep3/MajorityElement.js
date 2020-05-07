@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/majority-element/
+
 let majorityElement = function (nums) {
   nums.sort((a, b) => a - b);
 
