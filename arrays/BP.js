@@ -35,7 +35,7 @@ function balancedBrackets(str) {
 /* Some console.log tests */
 console.log(balancedBrackets("{}[]()")); // should print true
 console.log(balancedBrackets("{(([]))}")); // should print true
-console.log(balancedBrackets("{ [ ] ( ) }")); // should print true
+console.log(balancedBrackets("{ [jhkjhdjkh ] asdf(asdf ) }")); // should print true
 console.log(balancedBrackets("{ [ ( ] ) }")); // should print false
 console.log(balancedBrackets("(")); // should print false
 console.log(balancedBrackets("{[}")); // should print false

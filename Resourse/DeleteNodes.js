@@ -100,7 +100,7 @@
 // };
 
 // function balancedBracket (string){
-//     let stack = [];
+//     let result = [];
 
 //     let open = {
 //         '{': '}',
@@ -123,14 +123,14 @@
 //         } else if (closed[char]) {
 //             if (open[stack.pop()] !== char){
 //                 return false;
-// //             }
+//             }
 
-// //         }
-// //     }
-// //     return stack.length === 0;
-// // }
+//         }
+//     }
+//     return stack.length === 0;
+// }
 
-// // console.log(balancedBracket())
+// console.log(balancedBracket())
 
 // function deleteNode(){
 //     let current = head;
@@ -148,14 +148,15 @@
 // }
 function three(arr, target) {
   let result = [];
-  let total = [];
 
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       for (let k = j + 1; k < arr.length; k++) {
         if (arr[i] + arr[j] + arr[k] === target) {
-          //   result.push(arr[i], arr[j], arr[k]);
-          result.push(new Array(arr[i], arr[j], arr[k]));
+          console.log(arr[i]);
+          console.log(arr[j]);
+          console.log(arr[k]);
+          result.push([arr[i], arr[j], arr[k]]);
         }
       }
     }
@@ -164,4 +165,4 @@ function three(arr, target) {
   return result;
 }
 
-console.log(three([12, 3, 1, 2, -6, 5, -8, 6], 0));
+console.log(three([12, 3, 1, 2, -6, 5, -8, 7], 0));
